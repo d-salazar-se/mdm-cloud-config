@@ -1,6 +1,7 @@
 HELP.md
 target/
-!.mvn/wrapper/maven-wrapper.jar
+.mvn/
+mvnw*
 !**/src/main/**
 !**/src/test/**
 
@@ -29,3 +30,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Mac OSX ###
+.DS_Store
