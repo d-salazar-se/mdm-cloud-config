@@ -1,0 +1,33 @@
+spring:
+  application:
+    name: eureka-registry
+  profiles:
+    active: develop
+
+---
+spring:
+  profiles: develop
+server:
+  port: 8282
+eureka:
+  server:
+    max-threads-for-peer-replication: 0
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+---
+spring:
+  profiles: production
+server:
+  port: 8282
+eureka:
+  server:
+    max-threads-for-peer-replication: 0
+  instance:
+    prefer-ip-address: true
+  client:
+    register-with-eureka: false
+    fetch-registry: false

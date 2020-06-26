@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: cloud-config
+  profiles:
+    active: native
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: file:/opt/config/shares
+  
+server:
+  port: 8888

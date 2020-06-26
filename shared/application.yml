@@ -1,0 +1,11 @@
+spring:
+  profiles: production
+
+eureka:
+  instance:
+    prefer-ip-address: false
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka-registry:8282/eureka
