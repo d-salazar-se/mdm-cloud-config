@@ -2,13 +2,11 @@ spring:
   application:
     name: eureka-registry
   profiles:
-    active: develop
+    active: production
 
----
-spring:
-  profiles: develop
 server:
   port: 8282
+
 eureka:
   server:
     max-threads-for-peer-replication: 0
@@ -17,17 +15,5 @@ eureka:
   client:
     register-with-eureka: false
     fetch-registry: false
-
----
-spring:
-  profiles: production
-server:
-  port: 8282
-eureka:
-  server:
-    max-threads-for-peer-replication: 0
-  instance:
-    prefer-ip-address: true
-  client:
-    register-with-eureka: false
-    fetch-registry: false
+    service-url:
+      default-zone: http://eureka-registry:8282/eureka

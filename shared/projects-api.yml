@@ -2,39 +2,18 @@ spring:
   application:
     name: projects-api
   profiles:
-    active: develop
+    active: production
+  data:
+    mongodb:
+      uri: mongodb://mongodb:27017/projects-api
 
 server:
   port: 8183
-
----
-spring:
-  profiles: develop
-  data:
-    mongodb:
-      uri: mongodb://mongodb:27017/projects-api
+  context-path: /projects-api
 
 eureka:
   instance:
     prefer-ip-address: false
   client:
-    register-with-eureka: true
-    fetch-registry: true
-    service-url:
-      defaultZone: http://eureka-registry:8282/eureka
-
----
-spring:
-  profiles: production
-  data:
-    mongodb:
-      uri: mongodb://mongodb:27017/projects-api
-      
-eureka:
-  instance:
-    prefer-ip-address: false
-  client:
-    register-with-eureka: true
-    fetch-registry: true
     service-url:
       defaultZone: http://eureka-registry:8282/eureka
